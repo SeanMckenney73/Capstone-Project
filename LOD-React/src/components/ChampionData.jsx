@@ -4,8 +4,11 @@ import { Outlet } from "react-router-dom";
 import "./ChampionData.css"; 
 
 function ChampionData({ patch = "latest", champ, nameChampion, champID }) {
+
+  const API_URL = import.meta.env.VITE_API_URL
+
   
-  const dataChampion = useChampionData(`http://localhost:3000/api/champions/${champID}`);
+  const dataChampion = useChampionData(`${API_URL}/api/champions`);
   const iconChampion = `https://cdn.communitydragon.org/${patch}/champion/${champ}/square`;
 
   if (!dataChampion || !dataChampion.data) {

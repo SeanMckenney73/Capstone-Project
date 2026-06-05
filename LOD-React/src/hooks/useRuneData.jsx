@@ -4,9 +4,10 @@ export function useRuneData(){
     const [runes, setRunes] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const API_URL = import.meta.env.VITE_API_URL
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/runes')
+        fetch(`${API_URL}/api/items`)
         .then((res) => {
             if (!res.ok) throw new Error(`HTTP Error! Status: ${res.status}`)
             return res.json()
