@@ -1,0 +1,112 @@
+
+.bg-dark.min-vh-100 {
+  background: radial-gradient(circle, #0a0e13 0%, #010a13 100%) !important;
+  font-family: 'Quantico', sans-serif !important;
+}
+
+
+.border-bottom.border-secondary.text-white {
+  font-family: 'Quantico', sans-serif !important;
+  color: #c8aa6e !important; 
+  letter-spacing: 2px;
+  border-bottom: 2px solid #1e2328 !important;
+}
+
+
+.card.border-secondary {
+  background-color: rgba(10, 14, 19, 0.85) !important;
+  border: 1px solid #1e2328 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  transition: border-color 0.2s ease;
+}
+
+
+.card-body h3.text-muted {
+  font-family: 'Quantico', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem !important;
+}
+
+
+.card-body h3:contains("Starter"), .text-muted:nth-child(1) { color: #94a3b8 !important; }
+.card-body h3:contains("Boots") { color: #d97706 !important; }
+.card-body h3:contains("Basic") { color: #2563eb !important; }
+.card-body h3:contains("Epic") { color: #9333ea !important; }
+.card-body h3:contains("Legendary") { color: #ea580c !important; }
+
+
+.card-body img.rounded.border {
+  width: 56px !important;
+  height: 56px !important;
+  border: 2px solid #3c3c41 !important;
+  background-color: #010a13 !important;
+  object-fit: cover;
+  transition: transform 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+
+.card-body img.rounded.border:hover {
+  transform: scale(1.08) !important;
+  border-color: #c8aa6e !important; 
+  box-shadow: 0 0 12px rgba(200, 170, 110, 0.6);
+}
+
+
+.tooltip {
+  font-family: 'Quantico', sans-serif !important;
+}
+
+.tooltip .tooltip-inner {
+  font-family: 'Quantico', sans-serif !important;
+  letter-spacing: 0.05em;
+  background-color: #12161a !important; 
+  border: 1px solid #32383e;
+  padding: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+.tooltip .tooltip-arrow::before {
+  border-top-color: #12161a !important;
+  border-bottom-color: #12161a !important;
+}
+
+
+.tooltip strong.text-white {
+  font-family: 'Quantico', sans-serif !important;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+}
+
+
+.tooltip p.text-light {
+  font-family: 'Quantico', sans-serif !important;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+
+.tooltip p.text-info {
+  font-family: 'Quantico', sans-serif !important;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+
+.tooltip .bg-black.text-success {
+  background-color: #0a0e13 !important;
+  border: 1px solid #1e2328;
+  font-family: monospace !important; 
+  color: #10b981 !important; 
+  letter-spacing: 0.02em;
+}
+
+.tooltip .gold-cost-text {
+  font-family: 'Quantico', sans-serif !important;
+  color: #ffb900 !important; 
+  letter-spacing: 0.05em;
+  font-weight: 700 !important;
+}

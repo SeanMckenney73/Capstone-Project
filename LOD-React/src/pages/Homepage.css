@@ -1,0 +1,23 @@
+
+.Homepage {
+  background: radial-gradient(circle, #0a0e13 0%, #010a13 100%) !important;
+  font-family: 'Quantico', sans-serif !important;
+  color: #e2e8f0;
+}
+
+
+.grid-header {
+  color: #c8aa6e !important; 
+  font-family: 'Quantico', sans-serif !important;
+  letter-spacing: 3px;
+  font-weight: 700;
+  border-bottom: 2px solid #1e2328;
+  padding-bottom: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+.champion-grid-container {
+  overflow: visible;
+}

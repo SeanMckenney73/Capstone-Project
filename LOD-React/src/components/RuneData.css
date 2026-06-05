@@ -1,0 +1,95 @@
+
+.rune-page-bg {
+  background: radial-gradient(circle, #0a0e13 0%, #010a13 100%);
+  font-family: 'Quantico', sans-serif !important;
+}
+
+
+.rune-tree-column {
+  background-color: rgba(10, 14, 19, 0.75);
+  border: 1px solid #1e2328;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  min-width: 420px;
+}
+
+
+.rune-circle-frame {
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #010a13;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex !important;
+}
+
+
+.keystone-frame {
+  width: 92px !important;
+  height: 92px !important;
+  border: 2px solid #3c3c41;
+  flex-shrink: 0;
+}
+
+.standard-frame {
+  width: 68px !important;
+  height: 68px !important;
+  border: 1px solid #3c3c41;
+  flex-shrink: 0;
+}
+
+
+.rune-circle-frame:hover {
+  transform: scale(1.06);
+  border-color: var(--hover-color);
+  box-shadow: 0 0 12px var(--hover-color);
+}
+
+
+.rune-image {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.rune-row-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+
+.rune-row-wrapper .d-flex {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+}
+
+
+.rune-row-wrapper:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background-color: #1e2328;
+}
+
+
+.quantico-tooltip .tooltip-inner {
+  font-family: 'Quantico', sans-serif !important;
+  letter-spacing: 0.05em;
+  background-color: #12161a !important;
+  border: 1px solid #32383e;
+}
+
+
+.quantico-tooltip .tooltip-arrow::before {
+  border-top-color: #12161a !important;
+}
