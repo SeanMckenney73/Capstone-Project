@@ -21,8 +21,8 @@ export const UserProvider = (props) => {
   
   const result = await response.json();
 
-  if (response.ok || result.result === 200) {
-    handleUpdateUser(result.data); 
+  if (response.ok) {
+    handleUpdateUser(result.data || result); 
   }
   return result;
 };

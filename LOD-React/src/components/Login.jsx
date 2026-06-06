@@ -9,26 +9,61 @@ function Login() {
 
   const { currentUser, handleUpdateUser, loginUser } = useUserContext();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    if (userPassword.length < 8) {
-      setSubmitResult({ type: 'danger', message: 'Password must be at least 8 chars long' });
-      return;
-    }
+  //   if (userPassword.length < 8) {
+  //     setSubmitResult({ type: 'danger', message: 'Password must be at least 8 chars long' });
+  //     return;
+  //   }
 
     
-    const response = await loginUser({ 
-      email: userEmail, 
-      userPassword: userPassword 
-    });
+  //   const response = await loginUser({ 
+  //     email: userEmail, 
+  //     userPassword: userPassword 
+  //   });
 
-    if (response.result === 200) {
-      setSubmitResult({ type: 'success', message: 'Successful login.' });
-    } else {
-      setSubmitResult({ type: 'danger', message: response.message || 'Invalid email or password.' });
+  //   if (response.result === 200) {
+  //     setSubmitResult({ type: 'success', message: 'Successful login.' });
+  //   } else {
+  //     setSubmitResult({ type: 'danger', message: response.message || 'Invalid email or password.' });
+  //   }
+  // };
+
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (userPassword.length < 8) {
+    setSubmitResult({ type: 'danger', message: 'Password must be at least 8 chars long' });
+    return;
+  }
+
+  const response = await loginUser({ 
+    email: userEmail, 
+    userPassword: userPassword 
+  });
+
+  console.log("=== BACKEND LOGIN RESPONSE ===", response);
+ 
+  const isSuccess = response && (
+    response.result === 200 || 
+    response.status === 200 || 
+    response.id || 
+    response.data
+  );
+
+  if (isSuccess) {
+    setSubmitResult({ type: 'success', message: 'Successful login.' });
+    
+    
+    if (!currentUser?.email) {
+      handleUpdateUser(response.data || response);
     }
-  };
+  } else {
+    setSubmitResult({ type: 'danger', message: response?.message || 'Invalid email or password.' });
+  }
+};
 
   
   if (currentUser?.email) return (

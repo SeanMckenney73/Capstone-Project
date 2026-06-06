@@ -22,7 +22,7 @@ res.json({ message: "Welcome to my sql application." });
 });
 
 let userRoutes = require('./routes/userRoutes');
-app.use('/api/users', userRoutes);
+app.use('/users', userRoutes);
 
 let championRoutes = require('./routes/championRoutes');
 app.use('/api/champions', championRoutes);

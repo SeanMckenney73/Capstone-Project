@@ -112,6 +112,7 @@ res.status(200).json({
 result: 200,
 data,
 });
+
 };
 
 module.exports = {
