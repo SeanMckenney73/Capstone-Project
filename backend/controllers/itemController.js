@@ -20,7 +20,6 @@
 const supabase = require("../dbConnect");
 
 const getItems = async (req, res) => {
-
 const { data, error } = await supabase
 
 

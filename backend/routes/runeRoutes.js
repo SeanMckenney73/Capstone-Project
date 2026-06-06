@@ -4,7 +4,7 @@ const Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-Controllers.runeController.getRunes(res);
+Controllers.runeController.getRunes(req, res);
 })
 
 

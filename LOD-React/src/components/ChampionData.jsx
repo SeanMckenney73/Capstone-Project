@@ -8,7 +8,7 @@ function ChampionData({ patch = "latest", champ, nameChampion, champID }) {
   const API_URL = import.meta.env.VITE_API_URL
 
   
-  const dataChampion = useChampionData(`${API_URL}/api/champions`);
+  const dataChampion = useChampionData(`${API_URL}/api/champions/${champID}`);
   const iconChampion = `https://cdn.communitydragon.org/${patch}/champion/${champ}/square`;
 
   if (!dataChampion || !dataChampion.data) {
@@ -81,7 +81,7 @@ function ChampionData({ patch = "latest", champ, nameChampion, champID }) {
                       <div className="text-start p-1 font-quantico" style={{ maxWidth: '260px' }}>
                         <div className="border-bottom border-secondary pb-1 mb-2">
                           <strong className="text-gold d-block">{ability.name}</strong>
-                          <span className=" small fw-bold">Slot: {ability.key}</span>
+                          <span className=" small fw-bold">{ability.key}</span>
                         </div>
                         <p className="mb-2 small text-light fw-normal" style={{ lineHeight: '1.4' }}>
                           {ability.desc}

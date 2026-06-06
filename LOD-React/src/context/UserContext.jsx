@@ -4,7 +4,7 @@ const UserContext = React.createContext();
 
 export const UserProvider = (props) => {
   const [currentUser, setCurrentUser] = useState({});
-  const API_URL = "http://localhost:3000/api/users";
+  const API_URL = import.meta.env.VITE_API_URL;
 
   
   const handleUpdateUser = (user) => {
@@ -13,7 +13,7 @@ export const UserProvider = (props) => {
 
 
   const registerUser = async (userData) => {
-  const response = await fetch(`${API_URL}/create`, { 
+  const response = await fetch(`${API_URL}/users/create`, { 
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(userData)
@@ -28,7 +28,7 @@ export const UserProvider = (props) => {
 };
   
   const loginUser = async (credentials) => {
-    const response = await fetch(`${API_URL}/login`, {
+    const response = await fetch(`${API_URL}/users/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(credentials)
@@ -40,7 +40,7 @@ export const UserProvider = (props) => {
 
   
   const updateDBUser = async (id, updatedData) => {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${API_URL}/users/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedData)
@@ -52,7 +52,7 @@ export const UserProvider = (props) => {
 
   
   const deleteDBUser = async (id) => {
-    const response = await fetch(`${API_URL}/${id}`, {
+    const response = await fetch(`${API_URL}/users/${id}`, {
       method: 'DELETE'
     });
     const result = await response.json();

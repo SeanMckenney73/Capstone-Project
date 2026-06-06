@@ -1,74 +1,49 @@
 "use strict";
 
-
 const Models = require("../models");
-
 const supabase = require("../dbConnect");
 
+
 const getUsers = async (req, res) => {
-
 const { data, error } = await supabase
-
-
 
 .from("users")
 .select("*");
 if (error) {
-
-
 
 return res.status(500).json({
   result: 500,
   message: error.message,
 });
 }
-
 res.status(200).json({
-
-
-
 result: 200,
 data,
 });
-
 };
 
 const createUser = async (req, res) => {
-
 const { data, error } = await supabase
-
-
 
 .from("users")
 .insert([req.body])
 .select();
 if (error) {
 
-
-
 return res.status(500).json({
   result: 500,
   message: error.message,
 });
 }
-
 res.status(201).json({
-
-
-
 result: 201,
 data,
 });
-
 };
 
 const loginUser = async (req, res) => {
-
 const { email, userPassword } = req.body;
-
 const { data: user, error } = await supabase
-
-
 
 .from("users")
 .select("*")
@@ -76,18 +51,12 @@ const { data: user, error } = await supabase
 .single();
 if (error || !user) {
 
-
-
 return res.status(401).json({
   result: 401,
   message: "Invalid email or password",
 });
 }
-
 if (user.userPassword !== userPassword) {
-
-
-
 return res.status(401).json({
   result: 401,
   message: "Invalid email or password",
@@ -95,22 +64,14 @@ return res.status(401).json({
 }
 
 res.status(200).json({
-
-
-
 result: 200,
 data: user,
 });
-
 };
 
 const updateUser = async (req, res) => {
-
 const { id } = req.params;
-
 const { data, error } = await supabase
-
-
 
 .from("users")
 .update({
@@ -121,54 +82,36 @@ const { data, error } = await supabase
 .select();
 if (error) {
 
-
-
 return res.status(500).json({
   result: 500,
   message: error.message,
 });
 }
-
 res.status(200).json({
-
-
-
 result: 200,
 data,
 });
-
 };
 
 const deleteUser = async (req, res) => {
-
 const { id } = req.params;
-
 const { data, error } = await supabase
-
-
 
 .from("users")
 .delete()
 .eq("id", id)
 .select();
+
 if (error) {
-
-
-
 return res.status(500).json({
   result: 500,
   message: error.message,
 });
 }
-
 res.status(200).json({
-
-
-
 result: 200,
 data,
 });
-
 };
 
 module.exports = {

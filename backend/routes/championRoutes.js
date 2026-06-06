@@ -4,7 +4,7 @@ const Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-Controllers.championController.getChampions(res);
+Controllers.championController.getChampions(req, res);
 })
 
 router.get('/:id', (req, res)=> {
